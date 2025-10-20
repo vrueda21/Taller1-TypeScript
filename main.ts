@@ -3,8 +3,11 @@ import { dataSeries } from './dataSeries.js';
 
 
 let seriesTbody: HTMLElement = document.getElementById('series')!;
+let averageSeasonsElm: HTMLElement = document.getElementById('average-seasons')!;
 
 renderSeriesInTable(dataSeries);
+
+
 
 function renderSeriesInTable(series: Serie[]): void {
   console.log('Desplegando series');
@@ -18,4 +21,13 @@ function renderSeriesInTable(series: Serie[]): void {
     `;
     seriesTbody.appendChild(trElement);
   });
+
+  function getAverageSeasons(series: Serie[]): number {
+    let totalSeasons = 0;
+    series.forEach(s => totalSeasons += s.seasons);
+    return Math.round(totalSeasons / series.length);
+  }
+
+const average = getAverageSeasons(dataSeries);
+averageSeasonsElm.innerHTML = `Seasons average: ${average}`;
 }
