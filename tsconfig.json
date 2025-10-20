@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "es6",
+      "rootDir": "./",
+      "outDir": "./",
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "verbatimModuleSyntax": true,
+      "isolatedModules": true,
+      "skipLibCheck": true
+    },
+    "files": [
+      "main.ts",
+      "Serie.ts",
+      "dataSeries.ts"
+    ]
+  }
+  
